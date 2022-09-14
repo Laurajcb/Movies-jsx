@@ -1,0 +1,70 @@
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --very--light-grey: #c7c7c776;
+  --text-input-field: #F7F7F7;
+  --hospital-blue: #e8f0fe;
+  --sm: 14px;
+  --md: 16px;
+  --lg: 18px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.login-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-content: center;
+  align-self: center;
+  margin: 120px 0;
+}
+
+h2 {
+  color: var(--black);
+}
+
+.login-form {
+  margin: 76px 0;
+  display: grid;
+}
+
+.login-form input{
+  border: none;
+  border-radius: 6px;
+  height: 24px;
+  font-size: var(--sm);
+  padding: 6px;
+  margin-bottom: 16px;
+  
+}
+
+
+.label {
+  font-size: var(--sm);
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+
+.primary-btn {
+  background-color: var(--hospital-blue);
+  width: 100%;
+  height: 42px;
+  font-size: var(--md);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  color: var(--black);
+  margin-bottom: 12px;
+}
+
+.login-form :nth-child(6) {
+  font-size: var(--sm);
+  color: var(--black);
+  text-decoration: none;
+  justify-self: end;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import swAlert from '@sweetalert/with-react';
 import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 function Login() {
   // prev useHistory()
@@ -41,25 +42,30 @@ function Login() {
       .then(response => {
         const token = response.data.token;
         localStorage.setItem('token', token);
-        console.log("axios");
         navigate('/List');
       })
   }
   return (
     <>
-      <h2> Get into your account</h2>
-      <form onSubmit={submitHandler}>
-        <label>
-          <span> Email Address:</span>
+      <div className='login-container'>
+        <h2> Get into your account</h2>
+        <form onSubmit={submitHandler} className='login-form'>
+          <label>
+            <span>Email Address</span>
+          </label>
           <input type="text" name="email"></input>
-        </label>
-        <label>
-          <span>Password:</span>
+
+          <label>
+            <span>Password</span>
+          </label>
           <input type="password" name="password"></input>
-        </label>
-        <button type="submit">Login</button>
-      </form>
-      <a href="https://www.freepik.com/free-vector/forgot-password-concept-illustration_11906379.htm#query=forgot%20password&position=0&from_view=keyword">Forgot your password?</a>
+
+          <button type="submit" className='primary-btn'>Login</button>
+
+          <a href="https://www.freepik.com/free-vector/forgot-password-concept-illustration_11906379.htm#query=forgot%20password&position=0&from_view=keyword" className='link'>Forgot password</a>
+        </form>
+
+      </div>
     </>
   )
 }

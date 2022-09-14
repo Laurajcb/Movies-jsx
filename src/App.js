@@ -1,9 +1,11 @@
 import React from 'react';
-import { Login } from "./components/Login";
-import { List } from "./components/List";
+import { Login } from "./components/Login/Login";
+import { List } from "./components/List/List";
 import { Routes, Route } from "react-router-dom";
-import { Header } from './Header';
-import { Footer} from './Footer';
+import { Header } from './components/Header/Header';
+import { Footer} from './components/Footer/Footer';
+
+
 
 function App() {
   return (

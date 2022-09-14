@@ -1,0 +1,35 @@
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --very--light-grey: #c7c7c776;
+  --text-input-field: #F7F7F7;
+  --hospital-blue: #e8f0fe;
+  --sm: 14px;
+  --md: 16px;
+  --lg: 18px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.footer {
+  display: grid;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 142px;
+  background-color: var(--very--light-grey);
+  align-items: center;
+}
+
+.footer-content {
+  font-size: var(--md);
+  justify-self: center;
+}
+
+.footer-content li  {
+  list-style: none;
+}
