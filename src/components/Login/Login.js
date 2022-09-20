@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import swAlert from '@sweetalert/with-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate} from 'react-router-dom';
 import './Login.css';
 
 function Login() {
@@ -25,7 +25,7 @@ function Login() {
     if (email !== '' && !regexEmail.test(email)) {
       swAlert(
         <h2>You should use a valid email addrees</h2>
-      );
+      )
       return;
     }
     if (email !== 'challenge@alkemy.org' || password !== 'react') {
@@ -34,19 +34,19 @@ function Login() {
       )
       return;
     }
-    swAlert(
-      <h2>Perfect you're in! </h2>
-    )
+    
     axios
       .post('http://challenge-react.alkemy.org', { email, password })
       .then(response => {
         const token = response.data.token;
         localStorage.setItem('token', token);
-        navigate('/List');
+        navigate('/list');
       })
   }
+  let token = localStorage.getItem('token');
   return (
     <>
+      {token && <Navigate to="/list"/> }
       <div className='login-container'>
         <h2> Get into your account</h2>
         <form onSubmit={submitHandler} className='login-form'>

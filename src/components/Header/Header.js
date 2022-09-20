@@ -1,32 +1,47 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import './Header.css';
 
+import ReactLogo from '../../assets/film.svg';
 
 function Header() {
   return (
     <header>
-      <Navbar className='navbar-container'>
-        <img src='/assets/film.svg' alt='Logo' className='logo' />
-        <Container>
-        <Nav className='navbar-menu'>
-          <ul>
-            <li>
-              <Link to='/' className='section-home'>Home</Link>
-            </li>
-            <li>
-              <Link to='/List' className='section-list'>List</Link>
-            </li>
-            <li>
-              <Link to='/Contact' className='section-contact'>Contact</Link>
-            </li>
-          </ul>
-        </Nav>
-        </Container>
-      </Navbar>
+
+      <nav className='navbar navbar-expand-lg bg-light'>
+        <div className='container-fluid'>
+          <img src={ReactLogo} alt='Logo' className='logo' />
+          <button
+            className='navbar-toggler collapsed'
+            type='button'
+            data-bs-toggle="collapse"
+            data-bs-target='#main-menu'
+            aria-controls='main-menu'
+            arial-expanded='false'
+            aria-label='Toggle navigation'
+          >
+            <span className='navbar-toggler-icon'></span>
+          </button>
+          <div
+            className='navbar-collapse collapse'
+            id='main-menu'
+          >
+            <ul className='navbar-nav'>
+              <li className='nav-item'>
+                <Link to='/' className="nav-link active" aria-current="page">Home</Link>
+              </li>
+
+              <li className='nav-item'>
+                <Link to='/list' className="nav-link">List</Link>
+              </li>
+              
+              <li className='nav-item'>
+                <Link to='/contact' className="nav-link">Contact</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header >
   )
 }
