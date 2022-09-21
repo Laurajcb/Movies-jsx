@@ -4,6 +4,7 @@ import { List } from "./components/List/List";
 import { Routes, Route } from "react-router-dom";
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
+import { Detail } from './components/Detail/Detail';
 
 
 
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/list' element={<List />} />
+          <Route path='/detail' element={<Detail/>} />
         </Routes>
       </div>
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
+import swAlert from '@sweetalert/with-react';
 
 
 
@@ -14,6 +15,9 @@ function List() {
       .then(response => {
         const apiData = response.data;
         setMovieList(apiData.results)
+      })
+      .catch(error => {
+        swAlert(`Something when wrong, try later\n ${error}`)
       })
   }, [setMovieList]);
 
@@ -33,7 +37,7 @@ function List() {
                     <h5 className='card-titel'>{oneMovie.title.substring(0, 20)}</h5>
                     <p className='card-tex'>{oneMovie.overview.substring(0, 80)}...
                     </p>
-                    <Link to='/' className='btn btn-primary'>
+                    <Link to={`/detail?movieID=${oneMovie.id}`} className='btn btn-primary'>
                       View detail
                     </Link>
                   </div>
