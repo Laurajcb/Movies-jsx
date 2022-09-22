@@ -39,11 +39,11 @@ function Login() {
       .post('http://challenge-react.alkemy.org', { email, password })
       .then(response => {
         const token = response.data.token;
-        localStorage.setItem('token', token);
+        sessionStorage.setItem('token', token);
         navigate('/list');
       })
   }
-  let token = localStorage.getItem('token');
+  let token = sessionStorage.getItem('token');
   return (
     <>
       {token && <Navigate to="/list"/> }
