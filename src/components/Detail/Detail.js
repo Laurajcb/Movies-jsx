@@ -1,45 +1,53 @@
-import React, { useEffect } from "react";
-import { Navigate } from 'react-router-dom';
-
+import React, { useEffect, useState } from "react";
+import { Navigate } from 'react-router-dom'
+import axios from 'axios';
 
 function Detail() {
   let token = sessionStorage.getItem('token');
+
   let query = new URLSearchParams(window.location.search);
   let movieID = query.get('movieID');
+  const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    console.log(movieID)
-
+    let endPoint = (`https://api.themoviedb.org/3/movie/${movieID}?api_key=b463aec86cb8756bf7c98134a7166a7f&language=en-US`)
+    axios
+      .get(endPoint)
+      .then(response => {
+        const movieData = response.data;
+        setMovie(movieData);
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }, []);
 
   return (
     <>
       {!token && < Navigate to="/" />}
-      <h5>Title: Hello title</h5>
+      {!movie && <p>Loading ...</p>}
+      {movie && <>
+        <h4>Title: {`${movie.title}`}</h4>
+        <section className="row">
+          <div className="col-4">
+            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className='img-fluid' alt='movie poster' />
+          </div>
+          <div className="col-8">
+            <h5>
+              {`Release date: ${movie.release_date}`}
+            </h5>
+            <h5>{`Rating: ${movie.vote_average}`}</h5>
+            <p>
+              {`${movie.overview}`}
+            </p>
+            <h5>Genres:</h5>
+            <ul>
+              {movie.genres.map(oneGenre => <li key={`${oneGenre.id}`}>{`${oneGenre.name}`}</li>)}
+            </ul>
+          </div>
+        </section>
+      </>}
 
-      <section className="row">
-        <div className="col-4">
-          image
-        </div>
-        <div className="col-8">
-          <h5>
-            Release date: 02/34/56
-          </h5>
-          <h5>Review:</h5>
-          <p>
-            Lorem ipsum jdsvg whndv; dshco  ewfn  hjs ;ENDF;GHSDCDSHDIUwdj  idnwdh  sdfj
-            wbdecwdfbcdgcejnvweruhvqwhrvnhrv
-            hqeurfhqerjnfviuqherfvnqdfvqo3fpowckjdsnvbefijpwkdcndks;vnv fnqdfn;kqefhq;ef
-            fdefoiw3eu qwheoiqks, r230rormweifdo.
-          </p>
-          <h5>Genres:</h5>
-          <ul>
-            <li>Genero1</li>
-            <li>Genero2</li>
-          </ul>
-        </div>
-
-      </section>
     </>
   )
 }
