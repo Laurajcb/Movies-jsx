@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import { Search } from '../Search/Search';
 
 import ReactLogo from '../../assets/film.svg';
 
 function Header() {
   return (
     <header>
-
       <nav className='navbar navbar-expand-lg bg-light'>
         <div className='container-fluid'>
           <img src={ReactLogo} alt='Logo' className='logo' />
@@ -34,12 +34,13 @@ function Header() {
               <li className='nav-item'>
                 <Link to='/list' className="nav-link">List</Link>
               </li>
-              
+
               <li className='nav-item'>
                 <Link to='/contact' className="nav-link">Contact</Link>
               </li>
             </ul>
           </div>
+          < Search />
         </div>
       </nav>
     </header >
