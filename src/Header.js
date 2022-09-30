@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css';
-import { Search } from '../Search/Search';
+import { Search } from './Search';
 
-import ReactLogo from '../../assets/film.svg';
+import ReactLogo from './assets/film.svg';
 
 function Header() {
   return (
