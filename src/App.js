@@ -1,11 +1,12 @@
 import React from 'react';
 import { Login } from "./components/Login/Login";
-import { List } from "./List";
+import { List } from "./components/List";
 import { Routes, Route } from "react-router-dom";
-import { Header } from './Header';
-import { Footer } from './Footer';
-import { Detail } from './Detail';
-import { SearchResult } from './SearchResult';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { Detail } from './components/Detail';
+import { SearchResult } from './components/SearchResult';
+import '../src/css/app.css';
 
 
 

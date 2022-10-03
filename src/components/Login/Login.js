@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import swAlert from '@sweetalert/with-react';
 import { useNavigate, Navigate} from 'react-router-dom';
-import './Login.css';
+import '../../css/Login.css';
 
 function Login() {
   // prev useHistory()
