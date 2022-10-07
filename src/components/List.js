@@ -5,8 +5,9 @@ import swAlert from '@sweetalert/with-react';
 
 
 
-function List() {
+function List(params) {
   const token = sessionStorage.getItem('token');
+ console.log(params)
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ function List() {
       })
   }, [setMovieList]);
 
-
+ 
   return (
     <>
       {!token && <Navigate to="/" />}
@@ -33,7 +34,14 @@ function List() {
               <div className='col-3' key={idx}>
                 <div className='card my-4'>
                   <img src={`https://image.tmdb.org/t/p/w500/${oneMovie.poster_path}`} className='card-img-top' alt='...' />
-                  <button className='favorite-btn' role="img"><span role="img" aria-label="black-heard">🖤</span></button>
+                  <button 
+                  className='favorite-btn' 
+                  role="img"
+                  onClick={params.addOrRemoveFav}
+                  data-movie-id={oneMovie.id}
+                  >
+                  <span role="img" aria-label="black-heard">🖤</span>
+                  </button>
                   <div className='card-body'>
                     <h5 className='card-titel'>{oneMovie.title.substring(0, 20)}</h5>
                     <p className='card-tex'>{oneMovie.overview.substring(0, 80)}...
