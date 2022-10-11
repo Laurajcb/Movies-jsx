@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from './Search';
-
 import ReactLogo from '../assets/film.svg';
 
-function Header() {
+
+function Header(params) {
   return (
     <header>
       <nav className='navbar navbar-expand-lg bg-light'>
@@ -35,7 +35,15 @@ function Header() {
               </li>
 
               <li className='nav-item'>
-                <Link to='/contact' className="nav-link">Contact</Link>
+                <Link to='/favorites' className="nav-link">Favorites</Link>
+              </li>
+
+              <li className='text-success d-flex align-items-center'>
+                <span>
+                  {
+                    params.favorites.length > 0 && <> Movies in favorites: {params.favorites.length}</>
+                  }
+                </span>
               </li>
             </ul>
           </div>
