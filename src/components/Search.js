@@ -26,7 +26,7 @@ function Search() {
   return (
     <form className="d-flex align-items-center" onSubmit={submitHandler}>
       <label className="form-label mb-0">
-        <input className="form me-2 fw-lighter fs-9" type="text" name="keyword" placeholder="Titles, people, genre"></input>
+        <input className="form me-2 fw-lighter fs-6" type="text" name="keyword" placeholder="Titles, people, genre"></input>
       </label>
       <button type="submit" className="btn btn-outline-primary ml-12 btn-sm">Search</button>
     </form>
