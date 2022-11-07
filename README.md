@@ -1,5 +1,5 @@
 # MovieLover
- ###### This project is a React-router-dom implementation and API consumer. 
+ ###### This project is a React-router-dom implementation, API consumer, styled with Bootstrap and CSS. 
 
 # Description📍
 This is the first vertion of a webside where you can consult the latest movies, premiers and the most voted
@@ -25,7 +25,7 @@ On the terminal type:
 ```
 - Ready to use the aplication!
 
-![movieLovers.png]()
+![movieLovers.png](https://github.com/Laurajcb/Practice-jsx/blob/main/src/assets/movieLovers.png)
 
 # Bugs
 No known bugs at this time.
