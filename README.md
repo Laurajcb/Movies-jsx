@@ -6,12 +6,12 @@ This is the first vertion of a webside where you can consult the latest movies, 
 one you loging you can read the description of the movie and another important information , create your favorite list and modified.
 
 # Objetives 📋
-Using the  API The Movies DB and in the app you going to be able to:
+Using the  API The Movies DB and in the app, you going to be able to:
     - Login in the app
-    - List your favorites movies
+    - List your favourites movies
     - Read the movie description 
-    - Search an specific movie
-    - In the nav-bar visualize how many movies do you have in favorites 
+    - Search a specific movie
+    - In the nav bar visualize how many movies  you have in favourites 
 
 
 # Install and run
