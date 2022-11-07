@@ -25,7 +25,7 @@ On the terminal type:
 ```
 - Ready to use the aplication!
 
-![movieLovers.png](https://github.com/Laurajcb/Practice-jsx/blob/main/src/assets/movieLovers.png)
+![movieLovers.png](https://github.com/Laurajcb/Practice-jsx/blob/main/src/assets/movieLovers1.png)
 
 # Bugs
 No known bugs at this time.
