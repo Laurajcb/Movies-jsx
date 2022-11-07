@@ -1,0 +1,112 @@
+import React from 'react';
+import './App.css';
+import 'h8k-components';
+
+import Slides from './components/Slides';
+const title = "Slideshow App";
+
+function App({slides}) {
+    return (
+        <div>
+            <h8k-navbar header={title}></h8k-navbar>
+            <div className="App">
+                <Slides slides={slides} />
+            </div>
+        </div>
+    );
+}
+
+export default App;
+
+
+import React from 'react';
+
+function Slides({slides}) {
+  const slidesTittle = slides.header;
+  const slidesText = slides.slides;
+  console.log(slidesText, slidesText);
+   
+    return (
+        <div>
+            <div id="navigation" className="text-center">
+                <button data-testid="button-restart" className="small outlined">Restart</button>
+                <button data-testid="button-prev" className="small">Prev</button>
+                <button data-testid="button-next" className="small">Next</button>
+            </div>
+            <div id="slide" className="card text-center">
+                <h1 data-testid="title">{}</h1>
+                <p data-testid="text">Slide Text Here</p>
+            </div>
+        </div>
+    );
+
+}
+
+export default Slides;
+
+
+
+
+
+
+
+
+import React from 'react';
+import './App.css';
+import 'h8k-components';
+
+import Articles from './components/Articles';
+
+const title = "Sorting Articles";
+
+function App({articles}) {
+
+    return (
+        <div className="App">
+            <h8k-navbar header={title}></h8k-navbar>
+            <div className="layout-row align-items-center justify-content-center my-20 navigation">
+                <label className="form-hint mb-0 text-uppercase font-weight-light">Sort By</label>
+                <button data-testid="most-upvoted-link" className="small">Most Upvoted</button>
+                <button data-testid="most-recent-link" className="small">Most Recent</button>
+            </div>
+            <Articles articles={articles}/>
+        </div>
+    );
+
+}
+
+export default App;
+
+
+import React from 'react';
+
+function Articles() {
+
+    return (
+        <div className="card w-50 mx-auto">
+            <table>
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Upvotes</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-testid="article" key="article-index">
+                    <td data-testid="article-title">Article 1 title</td>
+                    <td data-testid="article-upvotes">Article 1 title</td>
+                    <td data-testid="article-date">Article 1 title</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    );
+
+}
+
+export default Articles;
+
+
+
+
