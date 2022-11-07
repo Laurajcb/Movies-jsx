@@ -44,7 +44,7 @@ function List(params) {
                   </button>
                   <div className='card-body'>
                     <h5 className='card-titel'>{oneMovie.title.substring(0, 20)}</h5>
-                    <p className='card-tex'>{oneMovie.overview.substring(0, 80)}...
+                    <p className='card-tex h6'>{oneMovie.overview.substring(0, 85)}...
                     </p>
                     <Link to={`/detail?movieID=${oneMovie.id}`} className='btn btn-primary'>
                       View detail
