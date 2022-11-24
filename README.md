@@ -19,8 +19,9 @@ On the terminal type:
 
 ``` 
     - 1. git clone git@github.com:Laurajcb/Lets-to-do-it.git
-    - 2. npm start
-    - 3. on --> http://localhost:3000/
+    - 2. npm install
+    - 3. npm start
+    - 4. on --> http://localhost:3000/
 
 ```
 - Ready to use the aplication!
