@@ -20,7 +20,7 @@ function Detail() {
       .catch(error => {
         console.log(error)
       })
-  }, []);
+  }, );
 
   return (
     <>
