@@ -28,13 +28,13 @@ function Login() {
       )
       return;
     }
-    if (email !== 'emailExample@film.com' || password !== 'react') {
+    if (email !== 'challenge@alkemy.org' || password !== 'react') {
       swAlert(
         <h2>Invalid login credentials</h2>
       )
       return;
     }
-    
+
     axios
       .post('http://challenge-react.alkemy.org', { email, password })
       .then(response => {
@@ -42,6 +42,10 @@ function Login() {
         sessionStorage.setItem('token', token);
         navigate('/list');
       })
+      .catch((err) => {
+        console.error(err);
+      })
+
   }
   let token = sessionStorage.getItem('token');
   return (
