@@ -36,7 +36,7 @@ function Login() {
     }
     
     axios
-      .post('https://movies-jsx.vercel.app', { email, password })
+      .post('http://challenge-react.alkemy.org', { email, password })
       .then(response => {
         const token = response.data.token;
         sessionStorage.setItem('token', token);
