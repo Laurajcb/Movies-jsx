@@ -28,7 +28,7 @@ function Login() {
       )
       return;
     }
-    if (email !== 'challenge@alkemy.org' || password !== 'react') {
+    if (email !== 'emailExample@film.com' || password !== 'react') {
       swAlert(
         <h2>Invalid login credentials</h2>
       )
@@ -36,7 +36,7 @@ function Login() {
     }
     
     axios
-      .post('http://challenge-react.alkemy.org', { email, password })
+      .post('https://movies-jsx.vercel.app', { email, password })
       .then(response => {
         const token = response.data.token;
         sessionStorage.setItem('token', token);
