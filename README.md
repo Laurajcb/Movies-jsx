@@ -22,8 +22,8 @@ On the terminal type:
     - 2. npm install
     - 3. npm start
     - 4. on --> http://localhost:3000/
-    - 5. To login use email : challenge@alkemy.org
-    - 6. password : react 
+    - 5. To login use user name  : kminchelle
+    - 6. password : 0lelplR
 
 
 ```

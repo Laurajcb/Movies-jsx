@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import swAlert from '@sweetalert/with-react';
-import { useNavigate, Navigate} from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import '../../css/Login.css';
 
 function Login() {
@@ -12,23 +12,17 @@ function Login() {
     e.preventDefault();
 
 
-    const email = e.target.email.value;
+    const username = e.target.username.value;
     const password = e.target.password.value;
-    const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    if (email === '' || password === '') {
+    if (username === '' || password === '') {
       swAlert(
         <h2>Filds can't be empty</h2>
       )
       return;
     }
-    if (email !== '' && !regexEmail.test(email)) {
-      swAlert(
-        <h2>You should use a valid email addrees</h2>
-      )
-      return;
-    }
-    if (email !== 'challenge@alkemy.org' || password !== 'react') {
+    
+    if (username !== 'kminchelle' || password !== '0lelplR') {
       swAlert(
         <h2>Invalid login credentials</h2>
       )
@@ -36,10 +30,11 @@ function Login() {
     }
 
     axios
-      .post('http://challenge-react.alkemy.org', { email, password })
+      .post('https://dummyjson.com/auth/login', { username, password })
       .then(response => {
         const token = response.data.token;
         sessionStorage.setItem('token', token);
+        console.log(response.data.token);
         navigate('/list');
       })
       .catch((err) => {
@@ -50,14 +45,14 @@ function Login() {
   let token = sessionStorage.getItem('token');
   return (
     <>
-      {token && <Navigate to="/list"/> }
+      {token && <Navigate to="/list" />}
       <div className='login-container'>
         <h2> Get into your account</h2>
         <form onSubmit={submitHandler} className='login-form'>
           <label>
-            <span>Email Address</span>
+            <span>User Name</span>
           </label>
-          <input type="text" name="email"></input>
+          <input type="text" name="username"></input>
 
           <label>
             <span>Password</span>
